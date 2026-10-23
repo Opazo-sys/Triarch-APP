@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Triarch.OverlayWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Triarch overlay" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF" Topmost="True" ShowInTaskbar="False" ShowActivated="False" ResizeMode="NoResize" Focusable="False" SizeToContent="WidthAndHeight" UseLayoutRounding="True" TextOptions.TextFormattingMode="Display" xmlns:triarch="clr-namespace:Triarch;assembly=Triarch">
+  <Border Name="Box" Background="#DC0B0D13" BorderBrush="#440EA5E9" BorderThickness="1" CornerRadius="12" Padding="14,10">
+    <FrameworkElement.LayoutTransform>
+      <ScaleTransform x:Name="Scale" ScaleX="1" ScaleY="1" />
+    </FrameworkElement.LayoutTransform>
+    <StackPanel TextElement.FontFamily="Cascadia Code, Cascadia Mono, Consolas" TextElement.FontSize="12" TextElement.Foreground="#F3F5F9">
+      <StackPanel Name="OFpsRow" Orientation="Horizontal">
+        <TextBlock Name="OFps" Text="—" FontSize="24" FontWeight="Bold" Foreground="#38BDF8" />
+        <TextBlock Name="OFpsUnit" Text=" FPS" Foreground="#949EB5" VerticalAlignment="Bottom" Margin="0,0,0,4" />
+        <TextBlock Name="OFrameTime" Text="" Foreground="#949EB5" VerticalAlignment="Bottom" Margin="12,0,0,4" />
+      </StackPanel>
+      <TextBlock Name="OLow" Text="1% low —" Foreground="#949EB5" />
+      <Canvas Name="OGraph" Width="190" Height="30" Margin="0,6,0,4" ClipToBounds="True" />
+      <ItemsControl Name="ORows" Margin="0,2,0,0">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="44" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+              <TextBlock Foreground="#949EB5" Text="{Binding Label}" />
+              <TextBlock Grid.Column="1" Text="{Binding Value}" />
+            </Grid>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+      <TextBlock Name="OGame" Text="" Foreground="#58627A" FontSize="10" Margin="0,5,0,0" />
+    </StackPanel>
+  </Border>
+</Window>

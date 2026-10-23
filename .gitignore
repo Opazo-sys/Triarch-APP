@@ -1,0 +1,13 @@
+## Ignorar pastas de compilação do .NET
+[Bb]in/
+[Oo]bj/
+
+## Ignorar saídas de instaladores
+Instalador_Output/
+publish/
+
+## Arquivos de configuração de IDEs
+.vs/
+.vscode/
+*.user
+*.suo

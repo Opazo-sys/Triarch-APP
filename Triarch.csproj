@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Triarch</AssemblyName>
+    <Version>1.0.0</Version>
+    <RootNamespace>Triarch</RootNamespace>
+    <PublishRepositoryUrl>false</PublishRepositoryUrl>
+    <EnableSourceControlManagerQueries>false</EnableSourceControlManagerQueries>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <EmbedUntrackedSources>false</EmbedUntrackedSources>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <SelfContained>false</SelfContained>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Remove="Triarch\App.xaml" />
+    <ApplicationDefinition Include="Triarch\App.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="app.xaml" />
+    <Page Remove="Triarch\MainWindow.xaml" />
+    <Page Remove="Triarch\OverlayWindow.xaml" />
+    <Page Remove="Triarch\ToastWindow.xaml" />
+    <Page Remove="Triarch\SensorMonitorWindow.xaml" />
+    <Page Remove="theme.xaml" />
+    <Page Include="Triarch\MainWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="mainwindow.xaml" />
+    <Page Include="Triarch\OverlayWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="overlaywindow.xaml" />
+    <Page Include="Triarch\ToastWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="toastwindow.xaml" />
+    <Page Include="Triarch\SensorMonitorWindow.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="sensormonitorwindow.xaml" />
+    <Page Include="theme.xaml" Generator="MSBuild:Compile" SubType="Designer" LogicalName="theme.xaml" />
+    <Resource Remove="assets\app.ico" />
+    <Resource Remove="assets\app_icon.ico" />
+    <Resource Remove="assets\logo-badge.png" />
+    <Resource Remove="assets\logo-dark.png" />
+    <Resource Remove="assets\logo.png" />
+    <Resource Include="assets\app.ico" LogicalName="assets/app.ico" />
+    <Resource Include="assets\app_icon.ico" LogicalName="assets/app_icon.ico" />
+    <Resource Include="assets\logo-badge.png" LogicalName="assets/logo-badge.png" />
+    <Resource Include="assets\logo-dark.png" LogicalName="assets/logo-dark.png" />
+    <Resource Include="assets\logo.png" LogicalName="assets/logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.6" />
+    <PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.2.8" />
+    <PackageReference Include="Microsoft.Diagnostics.NETCore.Client" Version="0.2.510501" />
+    <PackageReference Include="System.Management" Version="10.0.2" />
+    <PackageReference Include="System.CodeDom" Version="10.0.2" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.3" />
+    <PackageReference Include="System.Threading.AccessControl" Version="10.0.3" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.2" />
+    <PackageReference Include="Vortice.DXGI" Version="3.8.3" />
+    <PackageReference Include="Vortice.Direct3D11" Version="3.8.3" />
+    <PackageReference Include="Vortice.Direct3D12" Version="3.8.3" />
+    <PackageReference Include="Vortice.DirectX" Version="3.8.3" />
+    <PackageReference Include="Vortice.Dxc" Version="3.8.3" />
+    <PackageReference Include="Vortice.D3DCompiler" Version="3.8.3" />
+    <PackageReference Include="Vortice.Mathematics" Version="2.1.0" />
+  </ItemGroup>
+</Project>
